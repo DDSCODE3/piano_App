@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
+  color: #f0f0f0;
+}
+
+.wrapper {
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  background: #1a1a1a;
+  box-shadow: 0 0 30px rgba(0, 255, 208, 0.1);
+  border: 1px solid #2e2e2e;
+  max-width: 1000px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+header h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: #00ffd0;
+  letter-spacing: 1px;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+header span {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.volume-slider input {
+  accent-color: #00ffd0;
+  cursor: pointer;
+}
+
+.keys-checkbox input {
+  width: 60px;
+  height: 30px;
+  appearance: none;
+  background: #333;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.keys-checkbox input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #888;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keys-checkbox input:checked::before {
+  left: 35px;
+  background: #00ffd0;
+}
+
+.piano-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.key {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.key span {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.key.hide span {
+  display: none;
+}
+
+.white {
+  width: 70px;
+  height: 230px;
+  background: linear-gradient(#fdfdfd, #dcdcdc);
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+.white:hover,
+.black:hover {
+  transform: scale(1.05);
+}
+
+.white.active {
+  box-shadow: 0 0 15px #00ffd0;
+  background: linear-gradient(#fff, #ccc);
+}
+
+.black {
+  width: 44px;
+  height: 140px;
+  background: linear-gradient(#444, #111);
+  margin: 0 -22px;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+}
+
+.black span {
+  bottom: 8px;
+  color: #777;
+}
+
+.black.active {
+  box-shadow: 0 0 15px #00ffd0;
+  background: linear-gradient(#000, #444);
+}
+
+@media (max-width: 815px) {
+  .wrapper {
+    padding: 1.5rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .piano-keys {
+    gap: 0.3rem;
+  }
+
+  .white {
+    width: 60px;
+    height: 180px;
+  }
+
+  .black {
+    width: 36px;
+    height: 100px;
+    margin: 0 -18px;
+  }
+}
+
+@media (max-width: 615px) {
+  .white {
+    width: 50px;
+  }
+
+  .piano-keys .key:nth-child(n+13) {
+    display: none;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #00ffd0, #6a00ff, #ff0080);
+  background-size: 600% 600%;
+  animation: neonGradient 15s ease infinite;
+}
+
+@keyframes neonGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

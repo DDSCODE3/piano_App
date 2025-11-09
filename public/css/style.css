@@ -1,73 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
-  color: #f0f0f0;
+  background: #e3f2fd;
 }
-
 .wrapper {
-  padding: 2.5rem 3rem;
+  padding: 35px 40px;
   border-radius: 20px;
-  background: #1a1a1a;
-  box-shadow: 0 0 30px rgba(0, 255, 208, 0.1);
-  border: 1px solid #2e2e2e;
-  max-width: 1000px;
-  width: 100%;
+  background: #141414;
 }
-
-header {
+.wrapper header {
   display: flex;
-  flex-wrap: wrap;
+  color: #b2b2b2;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
 }
-
 header h2 {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  color: #00ffd0;
-  letter-spacing: 1px;
+  font-size: 1.6rem;
 }
-
 header .column {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
 }
-
 header span {
   font-weight: 500;
-  font-size: 1.1rem;
+  margin-right: 15px;
+  font-size: 1.19rem;
 }
-
-.volume-slider input {
-  accent-color: #00ffd0;
-  cursor: pointer;
-}
-
-.keys-checkbox input {
-  width: 60px;
-  height: 30px;
-  appearance: none;
-  background: #333;
+header input {
+  outline: none;
   border-radius: 30px;
-  position: relative;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
-
+.volume-slider input {
+  accent-color: #fff;
+}
+.keys-checkbox input {
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  background: #4b4b4b;
+}
 .keys-checkbox input::before {
   content: "";
   position: absolute;
@@ -75,176 +58,104 @@ header span {
   left: 5px;
   width: 20px;
   height: 20px;
-  background: #888;
   border-radius: 50%;
+  background: #8c8c8c;
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-
 .keys-checkbox input:checked::before {
   left: 35px;
-  background: #00ffd0;
+  background: #fff;
 }
-
-.piano-keys {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.key {
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.key span {
-  position: absolute;
-  bottom: 12px;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  color: #aaa;
-}
-
-.key.hide span {
-  display: none;
-}
-
-.white {
-  width: 70px;
-  height: 230px;
-  background: linear-gradient(#fdfdfd, #dcdcdc);
-  border-radius: 8px;
-  border: 1px solid #aaa;
-}
-
-.white:hover,
-.black:hover {
-  transform: scale(1.05);
-}
-
-.white.active {
-  box-shadow: 0 0 15px #00ffd0;
-  background: linear-gradient(#fff, #ccc);
-}
-
-.black {
-  width: 44px;
-  height: 140px;
-  background: linear-gradient(#444, #111);
-  margin: 0 -22px;
-  border-radius: 0 0 5px 5px;
-  z-index: 2;
-}
-
-.black span {
-  bottom: 8px;
-  color: #777;
-}
-
-.black.active {
-  box-shadow: 0 0 15px #00ffd0;
-  background: linear-gradient(#000, #444);
-}
-
-@media (max-width: 815px) {
-  .wrapper {
-    padding: 1.5rem;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .piano-keys {
-    gap: 0.3rem;
-  }
-
-  .white {
-    width: 60px;
-    height: 180px;
-  }
-
-  .black {
-    width: 36px;
-    height: 100px;
-    margin: 0 -18px;
-  }
-}
-
-@media (max-width: 615px) {
-  .white {
-    width: 50px;
-  }
-
-  .piano-keys .key:nth-child(n+13) {
-    display: none;
-  }
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(270deg, #00ffd0, #6a00ff, #ff0080);
-  background-size: 600% 600%;
-  animation: neonGradient 15s ease infinite;
-}
-
-@keyframes neonGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .piano-keys {
   display: flex;
   list-style: none;
   margin-top: 40px;
-  overflow-x: auto;
-  flex-wrap: nowrap;
-  /* جلوگیری از افتادن به خط بعد */
-  -webkit-overflow-scrolling: touch;
-  /* اسکرول نرم در موبایل */
+}
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+}
+.piano-keys .white {
+  height: 230px;
+  width: 70px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #a2a2a2;
+  font-size: 1.13rem;
+  text-align: center;
+}
+.piano-keys .key.hide span {
+  display: none;
+}
+.piano-keys .black span {
+  bottom: 13px;
+  color: #888888;
 }
 
-.piano-keys::-webkit-scrollbar {
-  height: 6px;
-}
-
-.piano-keys::-webkit-scrollbar-thumb {
-  background: #00ffd0;
-  border-radius: 10px;
-}
-
-/* وقتی موبایل در حالت عمودی باشه */
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 815px) {
   .wrapper {
-    display: none;
-    /* پیانو مخفی میشه */
+    padding: 25px;
   }
+  header {
+    flex-direction: column;
+  }
+  header :where(h2, .column) {
+    margin-bottom: 13px;
+  }
+  .volume-slider input {
+    max-width: 100px;
+  }
+  .piano-keys {
+    margin-top: 20px;
+  }
+  .piano-keys .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+  .piano-keys .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px 0 -20px;
+  }
+  .piano-keys .white {
+    height: 180px;
+    width: 60px;
+  }
+}
 
-  body::before {
-    content: "برای استفاده از پیانو، گوشی را به حالت افقی بچرخانید 🎹📱";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: #fff;
+@media screen and (max-width: 615px) {
+  .piano-keys .key:nth-child(13),
+  .piano-keys .key:nth-child(14),
+  .piano-keys .key:nth-child(15),
+  .piano-keys .key:nth-child(16),
+  .piano-keys .key :nth-child(17) {
+    display: none;
+  }
+  .piano-keys .white {
+    width: 50px;
   }
 }

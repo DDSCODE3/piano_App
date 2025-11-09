@@ -49,8 +49,8 @@ function playNoteWithClick() {
   });
 }
 
-
 playNoteWithClick();
+
 document.addEventListener("keydown", pressKey);
 volumeInput.addEventListener("change", setVolume);
 keysCheckbox.addEventListener("click", showOrHideKeys);
